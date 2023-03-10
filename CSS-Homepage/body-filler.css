@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 /*Paragraphs*/
+.s-box
+{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px #0088a9;
+}
 .img-logo{
     width:300px;
     height:300px;
@@ -73,8 +78,9 @@
 }
 
 .heading-2 h2{
+    padding-top: 80px;
     color:  white;
-    font-size: 25px;
+    font-size: 40px;
     text-decoration: underline;
     text-underline-offset: 9px;
     text-decoration-color: rgba(0,136,169,1);
@@ -209,8 +215,16 @@ height: 500px;
     margin: 0 auto;
 }
 
+@media(max-width: 1505px){
+
+  .s-box p{
+        font-size: 15px;
+        width: 300px;
+    }
+    /*End of Paragraphs*/
+  }
 /*responsive*/
-@media(max-width: 1350px){
+@media(max-width: 1080px){
 
     .service-container{
         display:block;

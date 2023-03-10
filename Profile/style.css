@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.profile-links 
+{
+    background-color: #24252A;
+    padding: 30px 20px;
+    text-align: center;
+    margin: 100px 70px 0 70px;
+    box-shadow: 0 0 20px 0 #045164;
+}
+
+.profile-links img
+{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 25px;
+
+}
+
+.profile-links li
+{
+    display: block;
+    margin: 10px 0;
+}
+
+.profile-links li a
+{
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    align-items: unset;
+}
+
+.profile-links li a:hover
+{
+    color: #0088a9;
+}
+
+.mt-custum
+{
+    margin-top: 100px;
+    background-color: #0088a9;
+    box-shadow: 0 0 20px 2px #0088a9;
+}
+
+.mt-custum .details
+{
+color: white;
+border-bottom: 1px solid white;
+padding: 20px;
+font-weight: 500;
+}
+
+.mt-custum .details2
+{
+color: white;
+padding: 20px;
+font-weight: 500;
+}
+
+.text-justify
+{
+text-align: justify;
+}
+
+.aboutme
+{
+    color: white;
+    background-color: #256D85;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px 2px #0088a9;
+}
+
+h1
+{
+color: white;
+text-align: center;
+}
+
+.btn-2
+{
+    color: white;
+    padding: 4px 10px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.btn-2:hover
+{
+    background-color: rgba(0,136,169,0.8);
+}
+
+@media  (max-width:1200px)
+{
+    .mt-custum
+    {
+    margin-top: 50px;
+    }
+
+    .profile-links
+    {
+    margin: 50px 50px 0 50px;
+    }
+}
+
+@media  (max-width:991px)
+{
+    .mt-custum
+    {
+    margin-top: 20px;
+    }
+
+    .profile-links
+    {
+    margin: 20px 0 0 0;
+    }
+}
+
+@media  (max-width:600px)
+{
+
+    .profile-links li
+    {
+    margin: 0;
+    }
+
+    .profile-links img
+    {
+    margin-bottom: 10px;
+    }
+
+    .mt-custum .details
+    {
+        padding: 10px;
+    }
+}

@@ -3,7 +3,7 @@
     width: 800px;
     display: block;
     margin: 0 auto;
-    margin-top: 600px;
+    margin-top: 200px;
 }
 .end-line{
     font-family: "Montserrat", "sans-serif";
@@ -41,6 +41,17 @@
   color: white;
 }
 
+@media(max-width: 1050px){
+    .hor{
+        margin-top: 500px;
+        }
+}
+
+@media(max-width: 381px){
+    .hor{
+        margin-top: 600px;
+        }
+}
 
 @media(max-width: 880px){
     .end-line:before{

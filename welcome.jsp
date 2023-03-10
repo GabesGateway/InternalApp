@@ -1,14 +1,17 @@
+<%@ page import = "java.sql.DriverManager"%>
+<%@ page import = "java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <title>GabesGateway/Welcome</title>
+        <title>GabesGateway/Home</title>
         <meta charset = "utf-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
         <link rel="stylesheet" href="CSS-Homepage/style.css">
-        <link rel="stylesheet" href="CSS-Homepage/navbar.css">
+        <link rel="stylesheet" href="CSS-Homepage/logged-navbar.css">
         <link rel="stylesheet" href="CSS-Homepage/intro.css">
         <link rel="stylesheet" href="CSS-Homepage/body-filler.css">
         <link rel="stylesheet" href="CSS-Homepage/title.css">
@@ -18,41 +21,110 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    </head>
+    
+        <style>
+
+.feature-box .btn-Two
+{
+    text-decoration: none !important;
+    background-color: rgba(0,136,169,1);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 30px;
+    border: 2px solid #a669ce !important;
+    color: white;
+    transition: all 0.3s ease 0s;
+    margin-top: 30px;
+}
+
+.feature-box .btn-Two:hover
+{
+    background-color: rgba(0,136,169,0.8);
+}
+
+@media(max-width: 991px)
+{
+  .feature-box .btn-Two
+{
+    margin-top: 15px;
+}
+}
+
+@media(max-width: 767px)
+{
+  .feature-box .btn-Two
+{
+    margin-top: 0px;
+}
+}
+
+@media(max-width: 365px)
+{
+  .feature-box .btn-Two
+{
+    margin-top: 15px;
+}
+}
+        </style>
+      </head>
     <body style="background: #222;">
+
+        <%
+        if(session.getAttribute("username")==null)
+        {
+          response.sendRedirect("login.jsp");
+        }
+        %>
+        
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <a href="index.html" class="navbar-brand" style="font-size: 30px;">
-                <img src="images/body-logo.png" alt="" height="50" style="padding-left: 20px;"> GabesGateway
-            </a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-           <div class="collapse navbar-collapse" id="mNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="login.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Inventory</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item">
-                            <a href="login.jsp">Text</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="login.jsp">Text</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="login.jsp">Text</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="login.jsp" class="nav-link">Schedule</a></li>
-                <li class="nav-item"><a href="login.jsp" class="nav-link">Sales</a></li>
-                <li class="nav-item"><a href="login.jsp" class="nav-link">Contact</a></li>
-                <li class="nav-item2"><a href="login.jsp" class="nav-link">Login</a></li>
-            </ul>
-           </div>
-           <div class="btn-div"><button class="btn-1"><a href="login.jsp" style="text-decoration: none; color: white;">Login</a></button></div>
-        </nav>
-        <hr style="height:2px; width:100%; border-width:0; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255); margin-top: 77px;">
+          <a href="welcome.jsp" class="navbar-brand" style="font-size: 30px;">  
+              <img src="images/body-logo.png" alt="" height="50" style="padding-left: 20px;"> GabesGateway
+          </a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+         <div class="collapse navbar-collapse" id="mNav">
+          <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a href="welcome.jsp" class="nav-link">Home</a></li>
+
+              <li class="nav-item dropdown">
+                  <a href="ComingSoon.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Inventory</a>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-item">
+                          <a href="ComingSoon.jsp">Text</a>
+                      </li>
+                      <li class="dropdown-item">
+                          <a href="ComingSoon.jsp">Text</a>
+                      </li>
+                      <li class="dropdown-item">
+                          <a href="ComingSoon.jsp">Text</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="nav-item"><a href="ComingSoon.jsp" class="nav-link">Schedule</a></li>
+              <li class="nav-item"><a href="ComingSoon.jsp" class="nav-link">Sales</a></li>
+              <li class="nav-item"><a href="contact.jsp" class="nav-link">Contact</a></li>
+              <li class="nav-item2"><a href="profile.jsp" class="nav-link">View Profile</a></li>
+              <li class="nav-item2"><form action="logout"><input type="submit" value="Logout"></form></li>
+          </ul>
+         </div>
+
+         <div class="btn-div">
+         <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">${FirstName}&nbsp;${LastName}</a>
+          <ul class="dropdown-menu">
+              <li class="dropdown-item">
+                  <a href="profile.jsp">View Profile</a>
+              </li>
+              <li class="dropdown-item">
+                  <form action="logout"><input type="submit" value="Logout" style="border: none; background-color: white; color: #0088a9;"></form>
+              </li>
+          </ul>
+         </li>
+         </div>
+      </nav>
+      <hr style="height:2px; width:100%; border-width:0; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255); margin-top: 89px;">
 
         
  
@@ -63,22 +135,22 @@
               <div class="row">
                   <div class="col-md-6">
                       <div class="feature-box">
-                          <h1>Join Our Community.</h1>
-                          <p>Register and explore your career in tech today.
+                          <h1>Welcome to our career page!</h1>
+                          <p>Explore and Connect with others.
                               Our Community is constantly growing everyday!
                           </p>
-                          <a href="login.jsp" class="btn-One">Learn more</a>
-                          
-                          <a href="login.jsp" class="btn-Two">Join Us</a>
-                          
+                          <a href="profile.jsp" class="btn-One">View Profile</a>
+                          <form action="logout"><input type="submit" value="Logout" class="btn-Two"></form>
                       </div>
                   </div>
                   <div class="col-md-6">
-                      <img src="images/body-pic.png" class="feature-img">
+                      <img src="images/bodylog-pic.png" class="feature-img">
                   </div>
               </div>
           </div>
       </div>
+
+
       <hr style="height:2px; width:100%; border-width:0; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255); margin-top: 77px;">
 
 

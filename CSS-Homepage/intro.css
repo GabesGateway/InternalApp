@@ -11,42 +11,43 @@
     background-size: cover; 
 }
 
-.row{
+.roww{
     display: flex;
     justify-content:space-between;
     align-items: center;
     margin: 100px 0;
 }
-.col-1{
+.coll-1{
     flex-basis: 40%;
     position: relative;
     margin-left: 50px;
     font-family: "Montserrat", "sans-serif";
 }
-.col-1 h2{
+.coll-1 h2{
     font-size: 54px;
     color:white;
 }
-.col-1 h3{
+.coll-1 h3{
     font-size: 30px;
     color:white;
     font-weight: 100;
     margin:20px 0 10px;
 }
-.col-1 p{
+.coll-1 p{
     font-size: 16px;
     color:white;
     font-weight: 100;
     margin: 10px 30px;
 }
 
-.col-2{
+.coll-2{
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.btn{
+.join a{
+    text-decoration: none;
     background-color: rgba(0,136,169,1);
     display: inline-block;
     padding: 10px 20px;
@@ -54,22 +55,26 @@
     color: #fff;
     border-radius: 0.5rem;
 }
+.join {
+    background: #222;
+    border: none;
+}
 
-.btn:hover{
+.join a:hover{
     transform: scale(1.2) translateY(10px);
     transition: .4s;
 }
 
-.col-2 .pic{
+.coll-2 .pic{
     width: 90%;
 }
 /*End of intro*/
 
 @media(max-width: 430px){
-    .col-1 h2{
+    .coll-1 h2{
         font-size: 25px;
     }
-    .col-1 h3{
+    .coll-1 h3{
         font-size: 18px;
     }
 }

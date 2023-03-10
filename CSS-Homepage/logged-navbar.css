@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.btn-1
+{
+    color: white;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-right: 30px;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.btn-1:hover
+{
+    background-color: rgba(0,136,169,0.8);
+}
+
+.nav-item2
+{
+display: none;
+font-family: "Montserrat", "sans-serif";
+}
+
+.nav-item
+{
+padding-left: 20px;
+transition: all 0.3s ease 0s;
+font-family: "Montserrat", "sans-serif";
+}
+
+.nav-item a:hover
+{
+    color: rgba(0,136,169,0.8);
+}
+
+.btn-div .nav-item a
+{
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease 0s;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.btn-div .nav-item a:hover
+{
+    color: rgba(0,136,169,0.8);
+}
+
+.btn-div .dropdown-item a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(0,136,169,0.8);
+    transition: all 0.3s ease 0s;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 991px){
+  .btn-div
+  {
+   display: none;
+  }
+
+  .navbar-toggler
+  {
+    margin-right: 20px;
+  }
+
+  .nav-item2
+    {
+    display: unset;
+    margin-left: 20px;
+    }
+}
