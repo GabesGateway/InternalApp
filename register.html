@@ -41,30 +41,33 @@
                     <h1>Register</h1>
                     <form action="connect.jsp" method="post">
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="firstName" placeholder="Enter First Name.....">
+                            <i class="fa fa-user"></i><input type="text" name="firstName" placeholder="Enter First Name....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="lastName" placeholder="Enter Last Name.....">
+                            <i class="fa fa-user"></i><input type="text" name="lastName" placeholder="Enter Last Name....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="username" placeholder="Enter Username.....">
+                            <i class="fa fa-user"></i><input type="text" name="username" placeholder="Enter Username....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-lock"></i><input type="password" name="password" placeholder="Enter Password.....">
+                            <i class="fa fa-lock"></i><input type="password" name="password" placeholder="Enter Password....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="email" placeholder="Enter Email Address.....">
+                            <i class="fa fa-user"></i><input type="email" name="email" placeholder="Enter Email Address....." required>
+                        </div>
+                         <div class="tbox">
+                            <i class="fa fa-user"></i><input type="test" name="age" placeholder="Enter Age....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="address" placeholder="Enter Home Address.....">
+                            <i class="fa fa-user"></i><input type="text" name="address" placeholder="Enter Home Address....." required>
                         </div>
                         <div class="tbox">
-                            <i class="fa fa-user"></i><input type="text" name="number" placeholder="Enter Phone Number.....">
+                            <i class="fa fa-user"></i><input type="tel" name="number" pattern= "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter Phone Number.. (ex: 111-111-1111)" required>
                         </div>
                         <input class="btn" type="submit">
                        <input class="btn" type="reset" style="margin-top: 30px;">
                     </form>
-                    <a href="Login.html" class="link-1">Already have an account? Login!</a>
+                    <a href="login.jsp">Already have an account? Login!</a>
                     <ul class="social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>

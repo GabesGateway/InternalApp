@@ -1,0 +1,127 @@
+<%@ page import = "java.sql.DriverManager"%>
+<%@ page import = "java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%
+String id = request.getParameter("productid");
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3307/";
+String database = "test";
+String userid = "root";
+String password = "";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Inventory Test</title>
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv='cache-control' content='no-cache'> 
+        <meta http-equiv='expires' content='0'> 
+        <meta http-equiv='pragma' content='no-cache'>
+        <link rel="stylesheet" href="CSS-Homepage/style.css">
+        <link rel="stylesheet" href="CSS-Homepage/navbar.css">
+        <link rel="stylesheet" href="CSS-Homepage/intro.css">
+        <link rel="stylesheet" href="CSS-Homepage/body-filler.css">
+        <link rel="stylesheet" href="CSS-Homepage/title.css">
+        <link rel="stylesheet" href="CSS-Homepage/footer.css">
+        <link rel="stylesheet" href="CSS-Homepage/news-box.css">
+        <link rel="stylesheet" href="CSS-Homepage/design.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+style="background: #222;">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand" style="font-size: 30px;">
+                <img src="images/body-logo.png" alt="" height="50" style="padding-left: 20px;"> GabesGateway
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="mNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="login.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Inventory</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="login.jsp">Warehouse 1</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="login.jsp">Text</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="login.jsp">Text</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="login.jsp" class="nav-link">Schedule</a></li>
+                <li class="nav-item"><a href="login.jsp" class="nav-link">Sales</a></li>
+                <li class="nav-item"><a href="login.jsp" class="nav-link">Contact</a></li>
+                <li class="nav-item2"><a href="login.jsp" class="nav-link">Login</a></li>
+            </ul>
+           </div>
+           <div class="btn-div"><button class="btn-1"><a href="login.jsp" style="text-decoration: none; color: white;">Login</a></button></div>
+           
+           
+        </nav>
+
+
+<h1>Inventory Test</h1>
+<table border="1">
+<tr>
+<td>WarehouseID</td>
+<td>Address</td>
+<td>ProductID</td>
+<td>Product Name</td>
+<td>Description</td>
+<td>Price</td>
+<td>Brand</td>
+<td>Stock</td>
+
+</tr>
+<%
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/test","root","");
+Statement st = con.createStatement();
+String str = "select * from warehouse_1_stock";
+ResultSet rs = st.executeQuery(str);
+while(rs.next()){
+%>
+<tr>
+<td><%=rs.getString("WarehouseID") %></td>
+<td><%=rs.getString("Address") %></td>
+<td><%=rs.getString("ProductID") %></td>
+<td><%=rs.getString("Product_name") %></td>
+<td><%=rs.getString("Description") %></td>
+<td><%=rs.getString("Price") %></td>
+<td><%=rs.getString("Brand") %></td>
+<td><%=rs.getString("Stock") %></td>
+
+</tr>
+<%
+}
+connection.close();
+} 
+catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table> 
+
+</body>
+</html>
