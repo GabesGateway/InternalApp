@@ -103,7 +103,7 @@ ResultSet resultSet = null;
 
 
  <div class="container">
-            <h1 style="color: white; text-align: center; padding-bottom: 20px;">| Warehouse 1 |</h1>
+            <h1 style="color: white; text-align: center; padding-bottom: 20px;">| Warehouse 2 |</h1>
             <div class="row">
                 <div class="col-12">
                     <div class="data_table">
@@ -130,7 +130,7 @@ try
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/test","root","");
 Statement st = con.createStatement();
-String str = "select * from warehouse_1_stock";
+String str = "select * from warehouse_2_stock";
 ResultSet rs = st.executeQuery(str);
 while(rs.next()){
 %>
@@ -252,7 +252,7 @@ e.printStackTrace();
                         <div class="col-md-7 col-lg-8 text-center text-md-start">
                           <!-- Copyright -->
                           <div class="p-3">
-                            © 2020 Copyright:
+                            � 2020 Copyright:
                             <a class="text-white" href="https://mdbootstrap.com/"
                                >MDBootstrap.com</a
                               >
